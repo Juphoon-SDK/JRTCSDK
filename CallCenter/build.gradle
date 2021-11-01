@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.kezong.fat-aar'
 
 repositories {
     mavenCentral()
@@ -48,5 +49,6 @@ android {
 }
 
 dependencies {
-    implementation(name: 'JRTCSDK', ext: 'aar')
+    embed(name: 'JRTCSDK', ext: 'aar')
+    //implementation "com.github.juphoon-app:JRTCSDK:1.0.22"
 }
