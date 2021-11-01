@@ -9,6 +9,9 @@ repositories {
     google()
     jcenter()
     maven { url "https://jitpack.io" }
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 android {
@@ -45,6 +48,6 @@ android {
 }
 
 dependencies {
-    embed files('libs/JRTCSDK.aar')
+    embed(name: 'JRTCSDK', ext: 'aar')
     //implementation "com.github.juphoon-app:JRTCSDK:1.0.22"
 }
