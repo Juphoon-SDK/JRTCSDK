@@ -1,23 +1,19 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.kezong.fat-aar'
+plugins {
+    id 'com.android.library'
+    id 'com.github.dcendents.android-maven'
+    id 'com.kezong.fat-aar'
+}
 
 repositories {
     mavenCentral()
     google()
     jcenter()
     maven { url "https://jitpack.io" }
-    flatDir {
-        dirs 'libs'
-    }
-
 }
-
-group = 'com.github.juphoon-app'
-version = '1.0'
 
 android {
     compileSdkVersion 30
+    ndkVersion "21.1.6352462"
 
     defaultConfig {
         minSdkVersion 21
@@ -49,6 +45,6 @@ android {
 }
 
 dependencies {
-    embed(name: 'JRTCSDK', ext: 'aar')
+    embed files('libs/JRTCSDK.aar')
     //implementation "com.github.juphoon-app:JRTCSDK:1.0.22"
 }
